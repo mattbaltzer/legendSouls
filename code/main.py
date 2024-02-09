@@ -1,15 +1,20 @@
 import pygame, sys
 from settings import *
+from level import Level
 
 class Game:
     def __init__(self):
 
-        #general setup
+        # General setup
         pygame.init()
-        # creating display surface
+        # Creating display surface
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
-        # creating clock
+        # Creating clock
         self.clock = pygame.time.Clock()
+        # Setting the title of the game window
+        pygame.display.set_caption('Legend Souls')
+        # Creates an instance of the Level class
+        self.level = Level()
 
     def run(self):
         # Checking if we're closing the game
@@ -25,6 +30,8 @@ class Game:
             pygame.display.update()
             # setting the framerate
             self.clock.tick(FPS)
+            # Runs the instance of the level class 
+            self.level.run()
 
 if __name__ == '__main__':
     game = Game()
