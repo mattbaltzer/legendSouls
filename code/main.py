@@ -26,12 +26,12 @@ class Game:
 
             # Filling the screen with black color
             self.screen.fill('black')
+            # Runs the instance of the level class 
+            self.level.run()
             # Updating the screen
             pygame.display.update()
             # setting the framerate
             self.clock.tick(FPS)
-            # Runs the instance of the level class 
-            self.level.run()
 
 if __name__ == '__main__':
     game = Game()
